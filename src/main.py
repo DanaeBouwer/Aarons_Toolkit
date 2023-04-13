@@ -4,7 +4,6 @@ import emoji
 import os
 import warnings
 import multiprocessing
-
 from termcolor import colored
 from src.errors import MainException, TypoException
 

@@ -325,7 +325,7 @@ def process_journal_selection_action(
         )
 
         server_error, Article_ID_list = server_response_request(
-            f"https://api-service-mrz6aygprq-oa.a.run.app/api/articles?journalName={Journal_Selected_urlenc}&scraped=0&exact=1&page_size={Number_of_Papers}&page = 1",
+            f"https://api-service-mrz6aygprq-oa.a.run.app/api/articles?journalName={Journal_Selected_urlenc}&scraped=0&exact=1&page_size={Number_of_Papers}&page=1",
         )
 
         # parameter called page_size = x, page = x
