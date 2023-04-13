@@ -300,7 +300,24 @@ def process_journal_download_criteria(download_by_issue, journal_name, journal_i
 
     if download_by_issue == "1":
 
-        get_articles(journal_id=journal_id, journal_name=journal_name)
+        print(
+        "\n"
+        + (colored(" i ", "blue", attrs=["reverse"])) * (is_windows)
+        + (emoji.emojize(":information:")) * (not is_windows)
+        + colored(f"   Please indicate how many papers you would like to download from the selected journal ((EXAMPLE: 50, 300, 1000, etc.)).")
+        )
+
+        while True:
+            Number_of_Papers = int(
+                input(
+                    "\n-- Type the number of papers you want download\n   : "
+                ).strip()
+            )
+
+            if Number_of_Papers > 0:
+                break
+
+        get_articles(journal_id=journal_id, journal_name=journal_name, Number_of_Papers=Number_of_Papers)
 
     elif download_by_issue == "2":
 
@@ -403,11 +420,11 @@ def process_issue_selection_action(issue_number, issue_list_json, issue_list_num
         raise TypoException
 
 
-def get_articles(journal_id=None, issue_id=None, author_name=None, journal_name=None):
+def get_articles(journal_id=None, issue_id=None, author_name=None, journal_name=None, Number_of_Papers=50):
 
     if journal_id:
         server_error, articles = server_response_request(
-            f"https://api-service-mrz6aygprq-oa.a.run.app/api/articles?journalID={journal_id}&scraped=1"
+            f"https://api-service-mrz6aygprq-oa.a.run.app/api/articles?journalID={journal_id}&scraped=1&page_size={Number_of_Papers}&page = 1"
         )
     elif issue_id:
         server_error, articles = server_response_request(
@@ -422,7 +439,8 @@ def get_articles(journal_id=None, issue_id=None, author_name=None, journal_name=
     if server_error:
         print_server_error()
 
-    articles = articles.json()
+    articles_response = articles.json()
+    articles = articles_response["data"]
 
     articles_size = len(articles)
 

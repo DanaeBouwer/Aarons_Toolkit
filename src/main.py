@@ -19,7 +19,6 @@ warnings.filterwarnings("ignore", category=UserWarning)
 is_windows = system()
 
 
-
 def welcome_message():
     print(colored("\n\nWelcome to Aaron's Kit!", attrs=["reverse"]))
 

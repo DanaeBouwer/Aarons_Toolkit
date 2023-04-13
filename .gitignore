@@ -1,1 +1,3 @@
 /.DS_Store
+/.wdm/
+/src/__pycache__/
