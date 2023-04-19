@@ -250,20 +250,31 @@ def login():
 
 def create_driver_session(chrome_options):
 
-    global driver
+    global driver   
 
     try:
 
         driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager(path=misc_directory).install()),
-            options=chrome_options,
+        service=Service(ChromeDriverManager(path = misc_directory).install()),
+        options=chrome_options,
         )
+
+    #     # Chromedriver not working for mac m1 currently no fix
+    #     # Add it manually to directory and refer to it
+    #     if is_windows:
+
+    #         driver = webdriver.Chrome(
+    #         service=Service(ChromeDriverManager(path  = misc_directory).install()),
+    #         options=chrome_options,
+    #     )
+    #     else:
+    #         driver = webdriver.Chrome(os.path.join(misc_directory, "chromedriver"), options = chrome_options)
 
         driver.minimize_window()
 
         return driver
 
-    except:
+    except Exception as e:
 
         print(
             "\n"

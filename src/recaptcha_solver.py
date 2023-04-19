@@ -1,7 +1,7 @@
+from pathlib import Path
 import time
 import pickle
 import random
-import os.path
 import os
 import re
 from datetime import datetime
@@ -20,7 +20,6 @@ from selenium.webdriver.common.keys import Keys
 from src.helpers import system
 
 warnings.filterwarnings("ignore", category=UserWarning)
-
 
 def frame(driver):
 
