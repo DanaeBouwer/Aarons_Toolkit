@@ -20,11 +20,9 @@ The Aaron's Kit executable functions as a tool to (1) bulk download papers for p
 
 1. Ensure that you have a stable internet connection.
 
-2. Ensure that you have Google Chrome installed, if not, download [Google Chrome](https://www.google.com/chrome/?brand=YTUH&gclid=CjwKCAjwzY2bBhB6EiwAPpUpZnxWu_8yGeeRo7u1r8v2NrWiTdkbg82BdHF4uVeBXtjhWq570Fyw_xoCpJsQAvD_BwE&gclsrc=aw.ds).
+2. Download the executable.
 
-3. Download the executable.
-
-4. Open the executable by double clicking, and select the option **[1] download papers**. Follow the prompts that will guide you through the journal selection and download process.
+3. Open the executable by double clicking, and select the option **[1] download papers**. Follow the prompts that will guide you through the journal selection and download process.
 
 ## How to contribute research articles
 
